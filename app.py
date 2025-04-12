@@ -1,3 +1,4 @@
+
 import streamlit as st
 from io import BytesIO
 from PIL import Image
@@ -86,4 +87,5 @@ if st.sidebar.button("Generate Resume"):
             100% { opacity: 1; }
         }
         </style>
+>>>>>>> aa34b801cbdcc8db7ebdaf3be4f28720de3807c6
     """, unsafe_allow_html=True)
