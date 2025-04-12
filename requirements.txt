@@ -1,0 +1,8 @@
+streamlit
+pandas
+flask
+spacy
+nltk
+python-docx
+reportlab
+scikit-learn
