@@ -140,11 +140,11 @@ if st.sidebar.button("Generate Resume"):
     pdf.set_font("Arial", 'I', 10)
     pdf.cell(0, 10, "Generated using AI Resume Builder", ln=1, align='C')
 
-    # Output PDF
-    pdf_output = BytesIO()
-    pdf.output(pdf_output)
-    pdf_output.seek(0)
+    # --- PDF Output Fix ---
+    pdf_bytes = bytes(pdf.output(dest='S'))
+    pdf_output = BytesIO(pdf_bytes)
 
+    # --- Download Button ---
     st.download_button(
         label="📥 Download Resume as PDF",
         data=pdf_output,
@@ -175,6 +175,7 @@ if st.sidebar.button("Generate Resume"):
     if github:
         st.markdown(f"[🔗 GitHub Profile]({github})", unsafe_allow_html=True)
 
+    # --- Skills Chart ---
     if skills:
         st.subheader("📊 Skill Distribution")
         skill_df = pd.DataFrame({'Skills': [s.strip() for s in skills.split(',')], 'Count': 1})
