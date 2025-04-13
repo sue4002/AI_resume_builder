@@ -140,8 +140,8 @@ if st.sidebar.button("Generate Resume"):
     pdf.set_font("Arial", 'I', 10)
     pdf.cell(0, 10, "Generated using AI Resume Builder", ln=1, align='C')
 
-    # --- PDF Output Fix ---
-    pdf_bytes = bytes(pdf.output(dest='S'))
+    # --- PDF Output Fix (Works everywhere) ---
+    pdf_bytes = pdf.output(dest='S').encode('latin1')
     pdf_output = BytesIO(pdf_bytes)
 
     # --- Download Button ---
