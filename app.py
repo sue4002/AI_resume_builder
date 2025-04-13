@@ -23,7 +23,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("📝 AI Resume Builder with Profile Picture Upload")
+st.title("📝 AI Resume Builder ")
 
 # --- Sidebar Inputs ---
 st.sidebar.header("Enter your details")
